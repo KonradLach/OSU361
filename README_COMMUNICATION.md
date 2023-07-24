@@ -65,24 +65,6 @@ if __name__ == '__main__':
     print('Results matched: ', smta_prototype())
 
 
+![image](https://github.com/KonradLach/OSU361/assets/93342886/f4d8acdd-75da-42cb-8dc0-ecda3065f87f)
 
-+-----------+              +--------------+              +--------------+
-|   Client  |              |Microservice Server|          |   Client   |
-+-----------+              +--------------+              +--------------+
-     |                             |                             |
-     |------------------------- Request ----------------------->|
-     |  (single_share_purchase_price, single_share_sold_price,   |
-     |   total_amount_initially_invested)                        |
-     |                             |                             |
-     |                             |                             |
-     |                             |              Calculate      |
-     |                             |<------------------------   |
-     |                             |  (per_share_gain_or_loss,    |
-     |                             |   percentage_gain_or_loss,  |
-     |                             |   investment_profit_or_loss)|
-     |                             |                             |
-     |                             |                             |
-     |<------------------------ Response ------------------------|
-     |     (per_share_gain_or_loss, percentage_gain_or_loss,      |
-     |      investment_profit_or_loss)                           |
 
