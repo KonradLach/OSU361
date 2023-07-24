@@ -32,37 +32,37 @@ result = socket.recv_pyobj()
 Example Call
 
 
-import zmq
-
-def smta_prototype():
-    context = zmq.Context()
-    socket = context.socket(zmq.REQ)
-    socket.connect("tcp://localhost:5555")
-
-    collection_sent = [
-        (10, 17, 1000),
-        (17, 10, 1000),
-        (500, 554, 10000)
-    ]
-
-    collection_received = [
-        (7, 70, 700),
-        (-7, -41.176, -411.765),
-        (54, 10.8, 1080)
-    ]
-
-    results = [False, False, False]
-
-    for index in range(3):
-        socket.send_pyobj(collection_sent[index])
-        result = socket.recv_pyobj()
-        print(result)
-        results[index] = result == collection_received[index]
-
-    return all(results)
-
-if __name__ == '__main__':
-    print('Results matched: ', smta_prototype())
+    import zmq
+    
+    def smta_prototype():
+        context = zmq.Context()
+        socket = context.socket(zmq.REQ)
+        socket.connect("tcp://localhost:5555")
+    
+        collection_sent = [
+            (10, 17, 1000),
+            (17, 10, 1000),
+            (500, 554, 10000)
+        ]
+    
+        collection_received = [
+            (7, 70, 700),
+            (-7, -41.176, -411.765),
+            (54, 10.8, 1080)
+        ]
+    
+        results = [False, False, False]
+    
+        for index in range(3):
+            socket.send_pyobj(collection_sent[index])
+            result = socket.recv_pyobj()
+            print(result)
+            results[index] = result == collection_received[index]
+    
+        return all(results)
+    
+    if __name__ == '__main__':
+        print('Results matched: ', smta_prototype())
 
 
 ![image](https://github.com/KonradLach/OSU361/assets/93342886/f4d8acdd-75da-42cb-8dc0-ecda3065f87f)
